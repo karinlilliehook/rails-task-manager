@@ -1,0 +1,8 @@
+<h1>My tasks</h1>
+
+<% @tasks.each do |task| %>
+  <p><%=link_to task.title, task_path(task)%></p>
+  <p><%= check_box_tag(task.title, value = "1", checked = task.completed) %></p>
+<% end %>
+
+<!-- maybe add a default to prevent changes from view -->
